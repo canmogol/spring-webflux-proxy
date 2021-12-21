@@ -1,0 +1,5 @@
+FROM centos:7
+ARG PROXY_HOST
+EXPOSE 8080
+COPY target/spring-webflux-proxy /spring-webflux-proxy
+ENTRYPOINT /spring-webflux-proxy -Dproxy.host=${PROXY_HOST}
